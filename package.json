@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "Vince Picone",
   "license": "ISC",
@@ -12,5 +12,8 @@
     "koa": "^2.13.3",
     "koa-mount": "^4.0.0",
     "koa-static": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
   }
 }

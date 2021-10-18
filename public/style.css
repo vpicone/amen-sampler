@@ -1,6 +1,15 @@
 .sound-list {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .sound-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.sound-list audio {
+  margin-top: 0.5rem;
 }
