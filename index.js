@@ -1,4 +1,5 @@
 const Koa = require("koa");
+const compress = require("koa-compress");
 const serve = require("koa-static");
 const mount = require("koa-mount");
 const cors = require("@koa/cors");
@@ -8,6 +9,20 @@ const { capitalize, keys } = require("./lib/util");
 
 const app = new Koa();
 app.use(cors());
+
+app.use(
+  compress({
+    gzip: {
+      flush: require("zlib").constants.Z_SYNC_FLUSH,
+    },
+    deflate: {
+      flush: require("zlib").constants.Z_SYNC_FLUSH,
+    },
+    br: {
+      flush: require("zlib").constants.Z_SYNC_FLUSH,
+    },
+  })
+);
 
 const soundPath = path.join(__dirname, "/static/sounds");
 app.use(mount("/sounds", serve(soundPath)));
