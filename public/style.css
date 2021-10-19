@@ -1,15 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1200px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.instructions {
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+  text-align: center;
+  font-variant-caps: all-small-caps;
+}
+
+.info-panel__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.info-panel__panel {
+  transform: translateX(400px);
+  filter: opacity(0);
+  transition: all 0.125s ease-in;
+  max-width: min(400px, 100vw);
+  min-height: 100vh;
+  height: -webkit-fill-available;
+  background: var(--background);
+  padding: 1.5rem;
+}
+
+.info-panel__container--expanded .info-panel__panel {
+  filter: opacity(1);
+  transition: all 0.25s ease-out;
+  transform: translateX(0);
+}
+
+.info-panel__panel * {
+  color: var(--text-main);
+}
+
+.info-panel__panel h2 {
+  text-align: center;
+  color: var(--text-bright);
+}
+
+.info-panel__panel a {
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  font-variant-caps: all-small-caps;
+  color: inherit;
+  font-size: 18px;
+}
+
+.info-panel__button {
+  all: unset;
+  pointer-events: auto;
+  fill: var(--text-bright);
+  border-radius: 50%;
+  padding: 0px;
+  margin: 4px;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.info-panel__button svg {
+  pointer-events: none;
+}
+
+.info-panel__button:hover {
+  background: none;
+  cursor: pointer;
+}
+
 .sound-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 0;
 }
 
 .sound-list li {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  background: var(--background-alt);
 }
 
 .sound-list audio {
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.sound {
+  border: 1px solid var(--border);
+}
+
+.sound__info {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.key {
+  border: 1px solid var(--text-main);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
 }

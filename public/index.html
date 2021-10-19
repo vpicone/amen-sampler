@@ -4,16 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://fav.farm/🥁" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Amen Server</title>
+    <title>Amen Sampler</title>
   </head>
   <body>
-    <h1>Amen Samples</h1>
-    <main><ul class="sound-list"></ul></main>
+    <h1>Amen Sampler</h1>
+    <p class="instructions">Keyboard shortcuts are circled</p>
+    <main>
+      <div class="info-panel__container">
+        <button class="info-panel__button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <path
+              d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3zM16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8Z"
+            />
+            <path
+              d="M16 30a14 14 0 1 1 14-14 14 14 0 0 1-14 14Zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4Z"
+            />
+            <path
+              data-name="&lt;Transparent Rectangle&gt;"
+              style="fill: none"
+              d="M0 0h32v32H0z"
+            />
+          </svg>
+        </button>
+        <div hidden class="info-panel__panel">
+          <h2>About the Amen break</h2>
+          <p>
+            The Amen break is a drum break that has been widely sampled in
+            popular music. It comes from the 1969 track "Amen, Brother" by the
+            soul group the Winstons. The drum break lasts about seven seconds
+            and was performed by <strong>Gregory Coleman</strong>.
+          </p>
+          <p>
+            With the rise of hip hop in the 1980s, the break was widely sampled;
+            in the 1990s, it became a staple of drum and bass and jungle music.
+            It has been used on thousands of tracks of many genres, making it
+            one of the most sampled recordings in history.
+          </p>
+          <p>
+            The Winstons received no royalties for its use; bandleader Richard
+            Lewis Spencer said it was unlikely Coleman,
+            <strong>who died homeless and destitute in 2006</strong>, realized
+            the impact he had made on music.
+          </p>
+
+          <a href="https://en.wikipedia.org/wiki/Amen_break">source</a>
+        </div>
+      </div>
+
+      <ul class="sound-list"></ul>
+    </main>
     <script type="module" src="main.js"></script>
   </body>
 </html>
