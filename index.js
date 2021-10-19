@@ -6,8 +6,6 @@ const path = require("path");
 const fs = require("fs");
 const { capitalize, keys } = require("./lib/util");
 
-const PORT = process.env.port || 8000;
-
 const app = new Koa();
 app.use(cors());
 
@@ -30,5 +28,5 @@ app.use(mount("/data", dataServer));
 
 app.use(serve("public", { extensions: true }));
 
-app.listen(PORT);
-console.log(`Listening on port ${PORT}`);
+app.listen(process.env.PORT || 8000);
+console.log(`Listening on port ${process.env.PORT || 8000}`);
