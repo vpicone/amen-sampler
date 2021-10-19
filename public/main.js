@@ -42,6 +42,7 @@ const expandInfoPanel = () => {
   infoPanel.removeAttribute("hidden");
   setTimeout(() => {
     infoButton.innerHTML = closeSVG;
+    infoButton.setAttribute("aria-label", "Hide information panel");
     infoContainer.classList.toggle("info-panel__container--expanded");
   }, 0);
 };
