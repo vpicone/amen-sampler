@@ -1,5 +1,5 @@
 // Fetch sound metadata from backend
-const req = await fetch("//localhost:8000/data");
+const req = await fetch("//0.0.0.0:8000/data");
 const sounds = await req.json();
 
 const soundList = document.querySelector(".sound-list");
