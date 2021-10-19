@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
+    "start": "node index.js",
+    "start:dev": "nodemon",
     "watch": "browser-sync start --config bs-config.js",
-    "dev": "run-p start watch"
+    "dev": "run-p start:dev watch"
   },
   "author": "Vince Picone",
   "license": "ISC",
