@@ -1,0 +1,15 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["dataproxy"]
+}
+
+model sample {
+    sample_id Int    @id @default(autoincrement())
+    name      String @unique
+    path      String @unique
+}
