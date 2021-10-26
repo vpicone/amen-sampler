@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon",
-    "build": "PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate",
+    "prisma:gen": "PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate",
     "watch": "browser-sync start --config bs-config.js",
     "dev": "run-p start:dev watch"
   },
