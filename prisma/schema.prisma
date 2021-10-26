@@ -12,4 +12,5 @@ model sample {
     sample_id Int    @id @default(autoincrement())
     name      String @unique
     path      String @unique
+    key       String @unique
 }
