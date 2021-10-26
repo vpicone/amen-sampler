@@ -4,8 +4,9 @@ const serve = require("koa-static");
 const mount = require("koa-mount");
 const cors = require("@koa/cors");
 const path = require("path");
-const fs = require("fs");
-const { capitalize, keys } = require("./lib/util");
+
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 
 const app = new Koa();
 app.use(cors());
@@ -29,14 +30,8 @@ app.use(mount("/sounds", serve(soundPath)));
 
 const dataServer = new Koa();
 async function getSounds(ctx) {
-  const paths = await fs.readdirSync(soundPath);
-  ctx.body = paths.map((path, i) => {
-    return {
-      name: path.replace(".wav", "").split("-").map(capitalize).join(" "),
-      path: `/sounds/${path}`,
-      key: keys[i],
-    };
-  });
+  const samples = await prisma.sample.findMany();
+  ctx.body = samples;
 }
 dataServer.use(getSounds);
 app.use(mount("/data", dataServer));
